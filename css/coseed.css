@@ -145,7 +145,7 @@
 
 .gnb .main_menu .sub_menu {
     position: absolute;
-    top: 101px;
+    top: 100px;
     left: 50%;
     transform: translate(-50%, 0);
     /* width: calc(100% + 1200px);
@@ -153,8 +153,8 @@
 
     text-align: center;
     white-space: nowrap;
-    background: rgba(0, 0, 0, 0.44);
-    padding: 10px 20px 20px 20px;
+    background: rgba(255, 255, 255, 8);
+    padding: 15px 20px 20px 20px;
 
     display: none;
 }
@@ -165,27 +165,44 @@
 
 .gnb .main_menu .sub_menu>li a {
     display: block;
-    color: #fff;
+    color: #000;
 }
 
 
 .gnb .main_menu>li .sub_menu a:hover {
-    color: var(--sc);
+    color: var(--mc);
 
 }
 
 
-.gnb .sub_menu li~li {
-    border-top: 1px solid rgba(255, 255, 255, .2);
-}
+/* .gnb .main_menu .sub_menu li~li {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+} */
 
-.header .gnb .sub_menu a {
+.gnb .sub_menu a {
     display: block;
     color: #000;
     font-size: 15px;
     line-height: 40px;
 }
 
+
+.header .main_menu>li::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* 변하는 기준점 바꿔서 중앙으로 넓이 변화하기 */
+    width: 0;
+    height: 3px;
+    background: var(--mc);
+}
+
+.header .main_menu>li:hover::after {
+    width: 100%;
+    transition: 0.5s;
+}
 
 
 
@@ -554,7 +571,7 @@
     background-color: #f9f9f9;
     box-sizing: border-box;
     border-radius: 5px;
-    box-shadow: 40px 40px 60px #00000013;
+    box-shadow: 5px 5px 40px rgba(184, 184, 184, 0.1);
 }
 
 .main_company .co_txt .co_tit {
