@@ -115,8 +115,6 @@
 }
 
 
-
-
 .header .side ul {
     display: flex;
     font-size: 16px;
@@ -133,6 +131,22 @@
 }
 
 
+.header .main_menu>li::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* 변하는 기준점 바꿔서 중앙으로 넓이 변화하기 */
+    width: 0;
+    height: 3px;
+    background: var(--mc);
+}
+
+.header .main_menu>li:hover::after {
+    width: 100%;
+    transition: 0.5s;
+}
 
 
 /* 다단메뉴*/
@@ -155,7 +169,6 @@
     white-space: nowrap;
     background: rgba(255, 255, 255, 8);
     padding: 15px 20px 20px 20px;
-
     display: none;
 }
 
@@ -174,35 +187,23 @@
 
 }
 
+.gnb .sub_menu {
+    border: 1px solid #ddd;
+}
 
-/* .gnb .main_menu .sub_menu li~li {
-    border-top: 1px solid rgba(255, 255, 255, .1);
-} */
+.gnb .sub_menu>li~li {
+    border-top: 1px solid #ddd;
+}
 
 .gnb .sub_menu a {
     display: block;
     color: #000;
     font-size: 15px;
     line-height: 40px;
+
 }
 
 
-.header .main_menu>li::after {
-    content: "";
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    /* 변하는 기준점 바꿔서 중앙으로 넓이 변화하기 */
-    width: 0;
-    height: 3px;
-    background: var(--mc);
-}
-
-.header .main_menu>li:hover::after {
-    width: 100%;
-    transition: 0.5s;
-}
 
 
 
